@@ -4,7 +4,7 @@ const download = require('download-git-repo');
 const utils = require('../utils/fileUtils');
 const fs = require('fs');
 const process = require('child_process');
-const octokit = new Octokit({ auth: 'your_access_token' });
+const octokit = new Octokit({ auth: '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' });
 
 function downloadFunc(downloadRepoUrl, temp_dest) {
   return new Promise(async (resolve, reject) => {
@@ -75,7 +75,7 @@ class ProjectService extends Service {
     // todo 判断是否已经存在项目，存在则不创建
     // coco-h5 替换成创建的 organizations name
     const {data: {id, ssh_url}} = await octokit.request('POST /orgs/coco-h5/repos', {
-      org: 'coco-h5',
+      org: 'bigfecn',
       name: config.name
     });
 
